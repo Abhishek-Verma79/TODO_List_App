@@ -1,0 +1,132 @@
+body{
+    margin : 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: lightgray;
+    color : rgb(109, 108, 108);
+    box-sizing: border-box;
+}
+
+#main-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    height: 80vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+#heading{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.descrip{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    font-size: .9rem;
+    font-weight: 600;
+    border-bottom: 1px solid;
+    padding-left: 1rem;
+}
+
+#desc , #cate-date{
+    width: 100%;
+    padding : .8rem;
+    padding-left: 0;
+}
+
+input{
+    border: 0px ;
+    font-size: 1.1rem;
+}
+select,input:focus{
+    outline: none;
+}
+
+form{
+    width: 100%;
+    font-size: .9rem;
+}
+
+#cate-date{
+    width : 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    margin-right : 1rem;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-bottom: 1rem;
+}
+
+#left-Cate{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 600;
+    width: 46%;
+    margin-right : 5rem;
+}
+#right-Date{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color :rgb(109, 108, 108);
+}
+
+#right-Date input{
+    color :rgb(109, 108, 108);
+}
+
+select{
+    margin-top: .6rem;
+    border: 0px;
+    font-size: 1rem;
+    color: rgb(109, 108, 108);
+}
+
+#btn-container{
+    display: flex;
+    justify-content: center;
+}
+button{
+    padding: 1rem;
+    background-color: red;
+    color : white;
+    border: 0;
+    font-size: 1rem;
+}
+
+#add-T{
+    margin-right : 2rem;
+    background-color: rgb(68,68,68);
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+.single-Task{
+    display : flex;
+    width: 100%;
+    background-color: blue;
+    margin-bottom: 1rem;
+}
+
+.desAndDate{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/3491a934aa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="heading">
+            <h1>TODO App</h1>
+        </div>
+        <form action="/Add-task" method="POST">
+        <div class="descrip">
+            <label for="desc">DESCRIPTION</label>
+            <input type="text" id="desc" name="description" placeholder="What do you need to do?">
+        </div>
+
+        <div id="cate-date">
+            <div id="left-Cate">
+            <label for="categ">CATEGORY</label>
+            <select id="categ" name="category">
+                <option value="" selected disabled>--Choose a category--</option>
+                <option value="personal" class="opt">personal</option>
+                <option value="work" class="opt">work</option>
+                <option value="school" class="opt">School</option>
+                <option value="cleaning" class="opt">cleaning</option>
+                <option value="other" class="opt">other</option>
+            </select>
+            </div>
+            <div id="right-Date">
+                <label for="fetch-date">DUE DATE</label>
+                <input id="fetch-date" type="date" name="date" >
+            </div>
+        </div>
+
+        <div id="btn-container">
+            <button type="submit" id="add-T"><i class="fa-sharp fa-solid fa-plus"></i>&ensp;ADD TASK</button>
+                <button><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
+        </div>
+
+        </form>
+
+        <div>
+            <ul>
+                <% for(let i of task_list) {%>
+                    <li>
+                        <div class="single-Task">
+                            <div class="desAndDate">
+                                <span><%= i.description %></span>
+                                <span><%=  i.date %></span>
+                            </div>
+                            <!-- <span class="descriptionOfTask">
+                                <%= i.description%> </span>
+                                <span class="cateOfTask">
+                                    <%= i.category%>
+                                </span>
+                                <span class="dateOfTask">
+                                    <%= i.date%>
+                                </span> -->
+                        </div>
+                    </li>
+                    <%}%>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
