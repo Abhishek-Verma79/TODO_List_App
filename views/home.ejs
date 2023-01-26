@@ -37,35 +37,66 @@
             </div>
         </div>
 
-        <div id="btn-container">
-            <button type="submit" id="add-T"><i class="fa-sharp fa-solid fa-plus"></i>&ensp;ADD TASK</button>
-                <button><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
+        <div class="btn-container" id="firstB">
+            <button type="submit" id="add-T" width="40%"><i class="fa-sharp fa-solid fa-plus"></i>&ensp;ADD TASK</button>
         </div>
-
         </form>
-
-        <div>
+        <form action="/delete-task" method="GET">
+            <div class="btn-container" id="secB">
+               <button type="submit"><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
+            </div>
+            <div class="listItem">
             <ul>
                 <% for(let i of task_list) {%>
                     <li>
                         <div class="single-Task">
+                            <input type="checkbox"  width="1rem" name="check"  value = <%= i._id %> id =`<%=i._id %>`>
+                            <label class="task-container" for=`<%= i._id %>` >
                             <div class="desAndDate">
                                 <span><%= i.description %></span>
-                                <span><%=  i.date %></span>
+                                <span class="makeItSmall"><i class="fa-solid fa-calendar-days"></i>&ensp;<%=  i.date %></span>
                             </div>
-                            <!-- <span class="descriptionOfTask">
-                                <%= i.description%> </span>
-                                <span class="cateOfTask">
-                                    <%= i.category%>
-                                </span>
-                                <span class="dateOfTask">
-                                    <%= i.date%>
-                                </span> -->
+                            <div class="forCate">
+                                <% if (i.category == 'personal'){%>
+                                <div class="innerCard perCard">
+
+                                    <span><%= i.category%></span>
+                                </div>
+                                <%}%>
+                                <% if (i.category == 'work'){%>
+                                    <div class="innerCard workCard">
+    
+                                        <span><%= i.category%></span>
+                                    </div>
+                                    <%}%>
+                                    <% if (i.category == 'school'){%>
+                                        <div class="innerCard schCard">
+        
+                                            <span><%= i.category%></span>
+                                        </div>
+                                        <%}%>
+                                        <% if (i.category == 'cleaning'){%>
+                                            <div class="innerCard cleanCard">
+            
+                                                <span><%= i.category%></span>
+                                            </div>
+                                            <%}%>
+                                            <% if (i.category == 'other'){%>
+                                                <div class="innerCard othCard">
+                
+                                                    <span><%= i.category%></span>
+                                                </div>
+                                                <%}%>
+                            </div>
+                            </label>
                         </div>
+                        <hr>
                     </li>
                     <%}%>
             </ul>
         </div>
+        </form>
+        
 
     </div>
 </body>

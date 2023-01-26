@@ -17,7 +17,8 @@ body{
     width: 60vw;
     height: 80vh;
     background-color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
 }
 
 #heading{
@@ -56,6 +57,7 @@ select,input:focus{
 form{
     width: 100%;
     font-size: .9rem;
+    display: inline-block;
 }
 
 #cate-date{
@@ -96,9 +98,11 @@ select{
     color: rgb(109, 108, 108);
 }
 
-#btn-container{
+.btn-container{
     display: flex;
     justify-content: center;
+
+
 }
 button{
     padding: 1rem;
@@ -109,24 +113,80 @@ button{
 }
 
 #add-T{
-    margin-right : 2rem;
+    margin-right : 11rem;
     background-color: rgb(68,68,68);
 }
+
 
 
 
 ul{
     list-style: none;
 }
+.listItem{
+    width: 100%;
+}
 
 .single-Task{
     display : flex;
     width: 100%;
-    background-color: blue;
     margin-bottom: 1rem;
+    height : 2.8rem;
+    font-weight: 600;
+    justify-content: space-between;
 }
 
 .desAndDate{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+.makeItSmall{
+    font-size: .74rem;
+    font-weight: 400;
+}
+.forCate{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: green; */
+    width: 52%;
+
+}
+.innerCard{
+    width : 6rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(160, 34, 160);
+    color: white;
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.perCard{
+    background-color: rgb(46, 46, 237);
+}
+.workCard{
+    background-color: blueviolet;
+}
+.schCard{
+    background-color: rgb(36, 180, 36);
+}
+.cleanCard{
+    background-color: rgb(218, 56, 50);
+}
+.othCard{
+    background-color: aqua;
+}
+
+.task-container{
+    width: 95%;
+    display: flex;
+}
+#secB{
+    position: absolute;
+    left : 30rem;
+    top : 15.5rem;
 }
