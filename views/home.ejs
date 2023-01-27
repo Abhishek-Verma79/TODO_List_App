@@ -41,7 +41,7 @@
             <button type="submit" id="add-T" width="40%"><i class="fa-sharp fa-solid fa-plus"></i>&ensp;ADD TASK</button>
         </div>
         </form>
-        <form action="/delete-task" method="GET">
+        <form action="/delete-task" method="GET" id="secForm">
             <div class="btn-container" id="secB">
                <button type="submit"><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
             </div>
@@ -54,7 +54,11 @@
                             <label class="task-container" for=`<%= i._id %>` >
                             <div class="desAndDate">
                                 <span><%= i.description %></span>
+                                <% if(i.date != "") { %>
                                 <span class="makeItSmall"><i class="fa-solid fa-calendar-days"></i>&ensp;<%=  i.date %></span>
+                                <% }else { %>
+                                    <span class="makeItSmall"> <i class="fa-solid fa-calendar-days"></i>&ensp; No Deadline </span>
+                                    <% } %>
                             </div>
                             <div class="forCate">
                                 <% if (i.category == 'personal'){%>

@@ -46,11 +46,9 @@ app.post('/Add-task',function(req,res){
 app.get('/delete-task',function(req,res){
     let iden = req.query.check;
     console.log(iden);
-    let count = 0;
 
     for(let i = 0; i < iden.length; i++){
         console.log(iden[i]);
-        count++;
         Task.findByIdAndDelete({_id: iden[i]},function(err){  // AND WE CAN USE SIMPLE iden[i] HERE
             if(err){
                 console.log("Error in deleting the task!");
@@ -59,7 +57,6 @@ app.get('/delete-task',function(req,res){
             }
         });
     }
-    console.log(count);
     return res.redirect('back');
 });
 
