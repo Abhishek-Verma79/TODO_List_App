@@ -266,6 +266,12 @@ ul{
     }
 }
 
+@media screen and (max-width : 836px){
+    #left-Cate{
+        width : 42%;
+    }
+}
+
 @media screen and (max-width : 754px){
     .forCate{
         padding-right : 5rem;
@@ -316,18 +322,25 @@ ul{
     }
 }
 
+@media screen and (max-width : 605px) {
+    #left-Cate{
+        width : 30%;
+    }
+}
+
 @media  screen and (max-width : 573px) {
     .makeItSmall{
-        font-size: .6rem;
+        font-size: .7rem;
     }
     .desAndDate{
         justify-content: space-around;
+        font-size: .8rem;
     }
     #fForm,#fForm input,select,.descrip{
         font-size: .73rem;
     }
     #left-Cate{
-        width : 30%;
+        width : 28%;
     }
     #secB{
         top : 14.2rem;
@@ -340,7 +353,6 @@ ul{
 @media screen and (max-width: 540px){
     
     .desAndDate{
-        font-size: .7rem;
         width: 50%;
     }
     #secB{
