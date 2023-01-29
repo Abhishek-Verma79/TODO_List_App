@@ -13,9 +13,6 @@ app.use(express.urlencoded());
 app.use(express.static('assets'));
 
 app.get('/',function(req,res){
-    // return res.render('home',{
-    //     title : "hello"
-    // })
     Task.find({},function(err,tasks){
         if(err){
             console.log("Error in fetching the tasks");
@@ -43,13 +40,14 @@ app.post('/Add-task',function(req,res){
     });
 });
 
+
 app.get('/delete-task',function(req,res){
     let iden = req.query.check;
     console.log(iden);
 
     for(let i = 0; i < iden.length; i++){
         console.log(iden[i]);
-        Task.findByIdAndDelete({_id: iden[i]},function(err){  // AND WE CAN USE SIMPLE iden[i] HERE
+        Task.findByIdAndDelete({_id: iden[i]},function(err){   // AND WE CAN USE SIMPLE iden[i] HERE
             if(err){
                 console.log("Error in deleting the task!");
             }else{
