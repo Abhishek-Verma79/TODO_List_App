@@ -12,6 +12,8 @@ app.set('views','./views');
 app.use(express.urlencoded());
 app.use(express.static('assets'));
 
+
+// HOME PAGE
 app.get('/',function(req,res){
     Task.find({},function(err,tasks){
         if(err){
@@ -25,6 +27,8 @@ app.get('/',function(req,res){
     });
 });
 
+
+//ADDING A NEW TASK
 app.post('/Add-task',function(req,res){
     Task.create({
         description : req.body.description,
@@ -40,7 +44,7 @@ app.post('/Add-task',function(req,res){
     });
 });
 
-
+//DELETING TASKS WITH CHECKED CHECKBOX
 app.get('/delete-task',function(req,res){
     let iden = req.query.check;
     console.log(iden);
@@ -58,7 +62,7 @@ app.get('/delete-task',function(req,res){
     return res.redirect('back');
 });
 
-
+//CHECKING THE STATE OF SERVER
 app.listen(port,function(err){
     if(err){
         console.log("There is some error in running the server");

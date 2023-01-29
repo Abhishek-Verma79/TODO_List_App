@@ -13,6 +13,9 @@
         <div id="heading">
             <h1>TODO App</h1>
         </div>
+
+        <!-- FORM FOR ADDING A NEW TASK -->
+
         <form action="/Add-task" method="POST" id="fForm">
         <div class="descrip">
             <label for="desc">DESCRIPTION</label>
@@ -41,11 +44,18 @@
             <button type="submit" id="add-T" width="40%"><i class="fa-sharp fa-solid fa-plus"></i>&ensp;ADD TASK</button>
         </div>
         </form>
+
+
+        <!-- FORM FOR DELETING THE TASKS -->
+
         <form action="/delete-task" method="GET" id="secForm">
             <div class="btn-container" id="secB">
                <button type="submit"><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
             </div>
             <div class="listItem">
+
+                <!-- DISPLAYING ALL THE TASKS PRESENT IN THE DATABASE -->
+
             <ul>
                 <% for(let i of task_list) {%>
                     <li>
@@ -58,8 +68,11 @@
                                 <span class="makeItSmall"><i class="fa-solid fa-calendar-days"></i>&ensp;<%=  i.date %></span>
                                 <% }else { %>
                                     <span class="makeItSmall"> <i class="fa-solid fa-calendar-days"></i>&ensp; No Deadline </span>
-                                    <% } %>
+                                <% } %>
                             </div>
+
+                            <!-- DIFFERENT CONDITIONS FOR DIFFERENT CATEGORIES CARDS WITH DIFFERENT COLOURS -->
+
                             <div class="forCate">
                                 <% if (i.category == 'personal'){%>
                                 <div class="innerCard perCard">
@@ -72,31 +85,31 @@
     
                                         <span><%= i.category%></span>
                                     </div>
-                                    <%}%>
-                                    <% if (i.category == 'school'){%>
-                                        <div class="innerCard schCard">
+                                <%}%>
+                                <% if (i.category == 'school'){%>
+                                    <div class="innerCard schCard">
         
-                                            <span><%= i.category%></span>
-                                        </div>
-                                        <%}%>
-                                        <% if (i.category == 'cleaning'){%>
-                                            <div class="innerCard cleanCard">
+                                        <span><%= i.category%></span>
+                                    </div>
+                                <%}%>
+                                <% if (i.category == 'cleaning'){%>
+                                    <div class="innerCard cleanCard">
             
-                                                <span><%= i.category%></span>
-                                            </div>
-                                            <%}%>
-                                            <% if (i.category == 'other'){%>
-                                                <div class="innerCard othCard">
+                                        <span><%= i.category%></span>
+                                    </div>
+                                <%}%>
+                                <% if (i.category == 'other'){%>
+                                    <div class="innerCard othCard">
                 
-                                                    <span><%= i.category%></span>
-                                                </div>
-                                                <%}%>
+                                        <span><%= i.category%></span>
+                                    </div>
+                                <%}%>
                             </div>
                             </label>
                         </div>
                         <hr>
                     </li>
-                    <%}%>
+                <%}%>
             </ul>
         </div>
         </form>

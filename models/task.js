@@ -1,3 +1,5 @@
+//CREATING TASK SCHEMA
+
 const mongoose = require("mongoose");
 mongoose.set('strictQuery',false);
 const taskSchema = new mongoose.Schema({

@@ -28,6 +28,8 @@ body{
     border-bottom: 1px solid black;
 }
 
+/* FORM 1 CSS ( FOR ADDING TASK ) */
+
 .descrip{
     display: flex;
     flex-direction: column;
@@ -61,23 +63,6 @@ form{
     display: inline-block;
 }
 
-#secForm{
-    width: 100%;
-    height: 50%;
-    overflow-y: scroll ;
-    overflow-x: hidden;
-    font-size: .9rem;
-    display: flex;
-    flex-direction: column;
-}
-
-/* #secForm::-webkit-scrollbar{
-    display: none;
-} */
-
-#secForm ul{
-    width: 100%;
-}
 
 #cate-date{
     width : 10rem;
@@ -103,13 +88,14 @@ form{
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    /* width : 28%; */
     color :rgb(109, 108, 108);
 }
 
 #right-Date input{
     color :rgb(109, 108, 108);
 }
+
+/* CSS FOR TASKS'S CATOGORY CHOOSING */
 
 select{
     margin-top: .6rem;
@@ -140,12 +126,29 @@ button{
 
 
 
+/* SECOND FORM CSS (DELETING TASK) */
+
 ul{
     list-style: none;
 }
+
+#secForm{
+    width: 100%;
+    height: 50%;
+    overflow-y: scroll ;
+    overflow-x: hidden;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#secForm ul{
+    width: 100%;
+}
+
 .listItem{
     width: 100%;
-    /* height: 50%; */
 }
 
 .single-Task{
@@ -166,11 +169,14 @@ ul{
     font-size: .74rem;
     font-weight: 400;
 }
+
+
+/* CSS fOR CATEGORY CARD IN TASKS  */
+
 .forCate{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* background-color: green; */
     width: 52%;
     padding-right: 7rem;
 
@@ -186,6 +192,8 @@ ul{
     font-weight: 400;
     font-size: .9rem;
 }
+
+/* DIFFERENT COLOURS ACCORDING TO DIFFERENT CATEGORIES */
 
 .perCard{
     background-color: rgb(46, 46, 237);
@@ -213,6 +221,9 @@ ul{
     left : 30rem;
     top : 15.5rem;
 }
+
+
+/* MEDIA QUERIES FOR RESPONSIVE NATURE OF THE APPLICATION */
 
 @media screen and (max-width : 1352px){
     #secB{
@@ -289,7 +300,6 @@ ul{
     .forCate{
         padding-right: 4rem;
     }
-    
 
     .innerCard{
         width : 4rem;
@@ -337,6 +347,8 @@ ul{
         left : 10.4rem;
     }
 }
+
+/* RESPONSIVE NATURE FOR PHONE VIEW */
 
 @media screen and (max-width: 499px){
     
