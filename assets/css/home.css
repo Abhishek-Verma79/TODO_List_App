@@ -48,6 +48,10 @@ body{
     padding-left: 0;
 }
 
+#desc{
+    width : 90%;
+}
+
 input{
     border: 0px ;
     font-size: 1.1rem;

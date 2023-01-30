@@ -44,23 +44,27 @@ app.post('/Add-task',function(req,res){
     });
 });
 
+
 //DELETING TASKS WITH CHECKED CHECKBOX
 app.get('/delete-task',function(req,res){
     let iden = req.query.check;
-    console.log(iden);
 
-    for(let i = 0; i < iden.length; i++){
-        console.log(iden[i]);
-        Task.findByIdAndDelete({_id: iden[i]},function(err){   // AND WE CAN USE SIMPLE iden[i] HERE
-            if(err){
-                console.log("Error in deleting the task!");
-            }else{
-                console.log("task deleted successfully!");
-            }
-        });
-    }
+    console.log(iden);
+    Task.deleteMany({
+        _id : {
+            $in : req.query.check
+        }
+    },function(err,deleted_tasks){
+        if(err){
+            console.log(err);
+            return res.status(404).send("<h1>Error while deleting specified tasks.</h1>");
+        }
+        console.log("Deleted the following: ", deleted_tasks);
+    });
+
     return res.redirect('back');
 });
+
 
 //CHECKING THE STATE OF SERVER
 app.listen(port,function(err){

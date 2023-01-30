@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <script src="https://kit.fontawesome.com/3491a934aa.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
@@ -19,13 +20,13 @@
         <form action="/Add-task" method="POST" id="fForm">
         <div class="descrip">
             <label for="desc">DESCRIPTION</label>
-            <input type="text" id="desc" name="description" placeholder="What do you need to do?">
+            <input type="text" id="desc" name="description" placeholder="What do you need to do?" required>
         </div>
 
         <div id="cate-date">
             <div id="left-Cate">
             <label for="categ">CATEGORY</label>
-            <select id="categ" name="category">
+            <select id="categ" name="category" required>
                 <option value="" selected disabled>--Choose a category--</option>
                 <option value="personal" class="opt">personal</option>
                 <option value="work" class="opt">work</option>
@@ -48,7 +49,7 @@
 
         <!-- FORM FOR DELETING THE TASKS -->
 
-        <form action="/delete-task" method="GET" id="secForm">
+        <form action="/delete-task" method="get" id="secForm">
             <div class="btn-container" id="secB">
                <button type="submit"><i class="fa-solid fa-trash"></i>&ensp;DELETE TASKS</button>
             </div>
@@ -114,7 +115,6 @@
         </div>
         </form>
         
-
     </div>
 </body>
 </html>
